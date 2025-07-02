@@ -46,7 +46,7 @@ services:
 
     # Service phpMyAdmin
     phpmyadmin:
-        image: arm64v8/phpmyadmin:latest
+        image: phpmyadmin:latest
         container_name: laravel_phpmyadmin
         environment:
             PMA_HOST: db
