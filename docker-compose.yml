@@ -4,12 +4,12 @@ services:
     # Service Laravel
     app:
         build:
-            dockerfile: Dockerfile
+            dockerfile: deploy/Dockerfile
         container_name: laravel_app
         restart: unless-stopped
         working_dir: /var/www/
         volumes:
-            - ./backend:/var/www
+            - /var/www
         networks:
             - app-network
 
@@ -21,8 +21,8 @@ services:
         ports:
             - "8000:80"
         volumes:
-            - ./backend:/var/www
-            - ./backend/docker/nginx/conf.d:/etc/nginx/conf.d/
+            - /var/www
+            - /docker/nginx/conf.d:/etc/nginx/conf.d/
         networks:
             - app-network
 
