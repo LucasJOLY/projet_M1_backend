@@ -4,6 +4,7 @@ services:
     # Service Laravel
     app:
         build:
+            context: .
             dockerfile: Dockerfile
         container_name: laravel_app
         restart: unless-stopped
